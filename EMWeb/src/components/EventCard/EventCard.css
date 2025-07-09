@@ -8,6 +8,7 @@
   padding: 32px;
   border-radius: 18px;
   border: 2px solid var(--primary-color);
+  position: relative;
 }
 .card:hover {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.187);
@@ -43,4 +44,34 @@
 }
 .card .card-content p span {
   font-size: 16px;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  z-index: 1;
+}
+
+.delete-btn:hover {
+  background-color: #ff0000;
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(255, 68, 68, 0.3);
+}
+
+.delete-btn:active {
+  transform: scale(0.95);
 }
