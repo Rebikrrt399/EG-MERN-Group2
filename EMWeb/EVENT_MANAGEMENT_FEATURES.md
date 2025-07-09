@@ -99,9 +99,15 @@ src/
 - ES6+ JavaScript features
 - File API for image uploads
 
+### 6. Event Deletion
+- **Delete Button**: Red delete button (✕) appears on custom event cards
+- **Safety Confirmation**: Confirmation dialog before deletion to prevent accidental removal
+- **Protected Static Events**: Built-in static events cannot be deleted (delete button doesn't appear)
+- **Real-time Updates**: Event list automatically refreshes after deletion
+- **User Feedback**: Error handling with appropriate user notifications
+
 ## Future Enhancements
 - Event editing functionality
-- Event deletion
 - User authentication integration
 - Event categories and filtering
 - Image optimization and cloud storage

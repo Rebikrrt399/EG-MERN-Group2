@@ -66,4 +66,28 @@ export const findEventById = (id) => {
   const allEvents = getAllEvents();
   return allEvents.find(event => event.id === parseInt(id));
 };
+
+// Utility function to delete an event
+export const deleteEvent = (id) => {
+  const eventId = parseInt(id);
+  
+  // Check if it's a static event (cannot be deleted)
+  const isStaticEvent = eventList.some(event => event.id === eventId);
+  if (isStaticEvent) {
+    throw new Error('Cannot delete static events');
+  }
+  
+  // Remove from custom events
+  const customEvents = JSON.parse(localStorage.getItem('customEvents') || '[]');
+  const updatedEvents = customEvents.filter(event => event.id !== eventId);
+  localStorage.setItem('customEvents', JSON.stringify(updatedEvents));
+  
+  return updatedEvents;
+};
+
+// Utility function to check if an event can be deleted
+export const canDeleteEvent = (id) => {
+  const eventId = parseInt(id);
+  return !eventList.some(event => event.id === eventId);
+};
   
