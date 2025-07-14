@@ -45,7 +45,7 @@ const EventDetails = ()=>{
             </p>
             {filteredEvent.time && (
               <p className="time font-weight-med">
-                <span className="font-weight-med">Time: {filteredEvent.time}</span>
+                <span className="font-weight-med">Somoi: {filteredEvent.time}</span>
               </p>
             )}
           </div>
