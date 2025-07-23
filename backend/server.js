@@ -7,14 +7,14 @@ import cors from "cors";
 dotenv.config();
 const app = express();
 
-// Middleware
-app.use(express.json());
-
-// ✅ CORS setup to allow frontend requests
+// ✅ CORS setup to allow Vite (frontend) requests
 app.use(cors({
-  origin: "http://localhost:3000", // 👈 change this if your frontend is deployed elsewhere
+  origin: "http://localhost:5173", // 👈 updated to match your frontend
   credentials: true
 }));
+
+// Middleware
+app.use(express.json());
 
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI, {
@@ -30,3 +30,4 @@ app.use("/api/auth", authRoutes);
 // Server
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+
